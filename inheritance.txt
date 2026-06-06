@@ -1,0 +1,1036 @@
+1) INHERITANCE
+
+public class Class1
+{
+    int Value = 100;
+     void Test1()
+   {
+        Console.WriteLine("Method1");
+    }
+    public void Test2()
+    {
+        Console.WriteLine("Method2");
+    }
+}
+class Class2:Class1
+{
+    public void Test3()
+    {
+       Console.WriteLine("Method3");
+   }
+        public static void Main(string[] args)
+   {
+       Class2 a = new Class2();
+       // a.Value = 30;in accesable due to protection level
+        //a.Test1();in accesable due to protection level
+        a.Test2();
+        a.Test3();
+
+    }
+}
+---------------------
+class Class2 : Class1
+{
+    public void Test3()
+   {
+        Console.WriteLine("Method3");
+   }
+    public static void Main(string[] args)
+    {
+        Class2 a = new Class2();
+        a.Test1();
+        a.Test2();
+        a.Test3 ();
+        Console.ReadLine();
+    }
+}
+
+-----------------------
+   class Class2
+{
+    public static void Main(string[] args)
+   {
+       Class1 a = new Class1();
+        a.Test1();
+        a.Test2();
+   }
+
+}
+---------------------
+class Class2 : Class1
+{
+    public static void Main(string[] args)
+    {
+        Class2 a = new Class2();
+       a.Test1();
+        a.Test2();
+    }
+}
+
+----------------------------------------------------------------------
+2) INHERITANCE
+abstract class Animal
+{
+    public abstract void MakeSound();
+
+}
+class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("dogs speak bow bow");
+    }
+}
+class Cat : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("cat sounds meow");
+    }
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Animal a;
+        a = new Dog();
+        a = new Cat();
+        a.MakeSound();
+        a.MakeSound();
+    }
+
+}
+---------------------------------------------------------------------------------
+3) INHERITANCE
+
+abstract class Changing
+{
+    public abstract void Drive();
+    // we can override the virtual method() inside the child class.
+    public virtual void Hold()
+    {
+        Console.WriteLine("the car is hold");
+    }
+}
+class Bike : Changing
+{
+    public override void Drive()
+    {
+        Console.WriteLine("you are driving left side");
+    }
+    // virtual method overiden.
+    public override void Hold()
+    {
+        Console.WriteLine("the car is moving");
+    }
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Changing a;
+        a = new Bike();
+        a.Hold();
+        a.Drive();
+    }
+
+}
+---------------------------------------------------------------------------
+4) INHERITANCE
+
+using System;
+class Part1
+{
+    public void Method1()
+    {
+        Console.WriteLine("method1 declaration");
+    }
+}
+class Part2
+{
+    public void Method2()
+    {
+        Console.WriteLine("method2 declaration");
+    }
+}
+class Part3 : Part2
+{
+    public void Method3()
+    {
+        Console.WriteLine("method3 declatrion.");
+    }
+    static void Main(string[] args)
+    {
+        Part3 p = new Part3();
+        p.Method2();
+        p.Method3();
+
+    }
+--------------------------------------------------------------------
+5) INHERITANCE,INTERFACES
+using System;
+public interface IInterface1
+{
+    void Test1();
+}
+public interface IInterface2
+{
+    void Test1();
+}
+class Action : IInterface1, IInterface2
+{
+    //public void Test1()
+    //{
+    //    Console.WriteLine("both classes same method implemented here.");
+    //}
+    //static void Main()
+    //{
+    //    Action a = new Action();
+    //    a.Test1();
+    //}
+
+
+
+
+    void IInterface1.Test1()
+    {
+        Console.WriteLine("interface1 implemented");
+    }
+    void IInterface2.Test1()
+    {
+        Console.WriteLine("interface2 implemented");
+    }
+    static void Main()
+    {
+        //Action a = new Action();
+
+        IInterface1 iref = new Action();
+        iref.Test1();
+        IInterface2 irf = new Action();
+        irf.Test1();
+
+}
+
+       --------------------
+        public void Test1()
+    {
+        Console.WriteLine("interface1 implemented here.");
+    }
+    //public void Test1()//THIS METHOD IS ALREADY DEFINED WITH SAME PARAMETERS ERROR OCCURED.
+    //{
+    //    Console.WriteLine("interface1 implemented here.");
+
+    //}
+    static void Main()
+    {
+        Action a = new Action();
+
+        a.Test1();
+
+
+    }
+}
+---------------------------------------------------------------------------------
+6) INHERITANCE
+
+        using System;
+        public class First
+{
+    public void Test1()
+    {
+        Console.WriteLine("test1 implemented");
+    }
+}
+public class Second
+{
+    public void Test2()
+    {
+        Console.WriteLine("here also test1 implemented");
+    }
+}
+class Action : First, Second
+{
+    public void Test1()
+    {
+        Console.WriteLine("interface1 implemented here.");
+    }
+    //public void Test1()//THIS METHOD IS ALREADY DEFINED WITH SAME PARAMETERS ERROR OCCURED.
+    //{
+    //    Console.WriteLine("interface1 implemented here.");
+
+    //}
+    static void Main()
+    {
+        Action a = new Action();
+
+        a.Test1();
+
+
+    }
+-----------------------------------------------------------------------------
+7)INHERITANCE,INTERFACES
+        using System;
+        public interface IInterface1
+{
+    void Test1();
+}
+public interface IInterface2
+{
+    void Test1();
+}
+class Action : IInterface1, IInterface2
+{
+    public void Test1()
+    {
+        Console.WriteLine("interface1 implemented here.");
+    }
+    //public void Test1()//THIS METHOD IS ALREADY DEFINED WITH SAME PARAMETERS ERROR OCCURED.
+    //{
+    //    Console.WriteLine("interface1 implemented here.");
+
+    //}
+    static void Main()
+    {
+        Action a = new Action();
+
+        a.Test1();
+
+
+    }
+}
+
+---------------------------------------------------------------------------------------
+8)INTERFACES MULTIPLE INHERITANCE AMBIGUITY CONFUSION SAME METHODS?
+
+        using System;
+        interface IA
+{
+    void Display();
+}
+interface IB
+{
+    void Display();
+}
+class D : IA, IB
+{                                             
+    void IA.Display()
+    {
+        Console.WriteLine("hfygetre");
+    }
+    public void Display()
+    {
+        Console.WriteLine("gdfetr");
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        D d = new D();
+        d.Display();
+        IA iaRef = d;
+        iaRef.Display();
+    }
+------------------------------------------------------------------------------------------
+8)INTERFACE,INHERITANCE
+        using System;
+        interface IA
+{
+    void Display();
+}
+interface IB
+{
+    void Display();
+}
+class C : IA, IB
+{
+    void IA.Display()
+    {
+        Console.WriteLine("display first interface.");
+    }
+    void IB.Display()
+    {
+        Console.WriteLine("display second interface.");
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        C d = new C();
+        IA iaRef = d;
+        iaRef.Display();
+        IB ibRef = d;
+        ibRef.Display();
+    }
+}
+------------------------------------------------------------------------------------------
+9)IN C# CHILD CLASS CAN INHERITS FROM SINGLE PARENT CLASS?
+
+        using System;
+        class Product
+{
+    private string Id;
+    private string Name;
+    private double Cost;
+
+    public void GetCost(double cost)
+    {
+        Cost = cost;
+        Console.WriteLine("Cost is: " + Cost);
+    }
+}
+class ElectronicProduct
+{                                          
+    private string Id;
+    private string Name;
+    public void GetName(string name)
+    {
+
+        Name = name;
+        Console.WriteLine("name is: " + Name);
+    }
+    class Child : Product, ElectronicProduct
+        }
+
+---------------------------------------------------------------------------------------
+10)INHRITANCE,INTERFACE
+        using System;
+
+        interface IPrinter
+{
+    void Print();
+}
+
+interface IScanner
+{
+    void Print();
+}
+
+class MultiFunctionDevice : IPrinter, IScanner
+{
+    public void Print()
+    {
+        Console.WriteLine("Printing...");
+    }
+
+
+}
+class Program
+{
+    public static void Main()
+    {
+        MultiFunctionDevice i = new MultiFunctionDevice();
+        i.Print();
+
+    }
+}
+----------------------------------------------------------------------------------------
+11)INHERITANCE BY PROPERTIES.
+        using System;
+        class Product
+{
+    private double cost;
+    public string Id { get; set; }
+    public string Name { get; set; }
+
+    public double Cost
+    {
+        get { return cost; }
+        set
+        {
+            if (value <= 0)
+            {
+                Console.WriteLine("invalid amount entered.");
+            }
+            else
+            {
+                cost = value;
+            }
+        }                                        //INHERITANCE BY PROPERTIES.
+    }
+
+}
+class ElectronicProduct : Product
+{
+    private string productType;
+
+    public string ProductType
+    {
+        get { return productType; }
+        set
+        {
+            if (value == "")
+            {
+                Console.WriteLine("product type is not empty.");
+            }
+            else
+            {
+                productType = value;
+            }
+        }
+    }
+}
+class Mobile : ElectronicProduct
+{
+    private double warrenty;
+    public double Warrenty
+    {
+        get { return warrenty; }
+        set
+        {
+            if (value <= 0)
+            {
+                Console.WriteLine("please enter valid warrenty.");
+
+            }
+            else
+            {
+                warrenty = value;
+            }
+        }
+    }
+
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Mobile m = new Mobile();
+
+        Console.Write("enter cost: ");
+        double cost = Convert.ToDouble(Console.ReadLine());
+        m.Cost = cost;
+        Console.WriteLine("product cost is :" + m.Cost);
+
+
+        Console.Write("enter Product type: ");
+        string type = Console.ReadLine();
+        m.ProductType = type;
+        Console.WriteLine("product type is :" + m.ProductType);
+
+        Console.Write("enter warrenty: ");
+        double warrenty = Convert.ToDouble(Console.ReadLine());
+        m.Warrenty = warrenty;
+        Console.WriteLine("warrenty is :" + m.Warrenty);
+
+    }
+}
+---------------------------------------------------------------------------------------
+12)INHERITANCE PARAMETARISED CONSTRUCTOR?
+        using System;
+        class Product
+{
+    public string Id;
+    public string Name;
+    public double Amount;
+    public Product(string id, string name, double amount)
+    {
+        this.Id = id;
+        this.Name = name;
+        this.Amount = amount;
+    }
+}                                                         
+class Mobile : Product
+{
+    public float Warrenty;
+    public Mobile(string id, string name, double amount, float warrenty) : base(id, name, amount)
+    {
+        this.Warrenty = warrenty;
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Mobile m = new Mobile("udhf65", "mobile", 8765, 2.5f);
+        Console.WriteLine(m.Name);
+        Console.WriteLine(m.Warrenty);
+    }
+}
+-------------------------------------------------------------------------------
+13)HIGHERARCHIAL INHERITANCE
+        using System;
+        class Product
+{
+    public int Id { get; set; }
+    public int Name { get; set; }
+    public double Cost { get; set; }
+}
+class Mobile : Product
+{
+    public string Warrenty { get; set; }                //HIGHERARCHIAL INHERITANCE
+}
+class Food : Product
+{
+    public string Expiry { get; set; }
+}
+class Cloth : Product
+{
+    public string ClothType { get; set; }
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Mobile m = new Mobile();
+        m.Warrenty = "0987655";
+        Console.WriteLine("mobile warrenty is: " + m.Warrenty);
+        Food f = new Food();
+        f.Expiry = "74-87-9876";
+        Console.WriteLine("food expiry is :" + f.Expiry);
+        Cloth c = new Cloth();
+        c.ClothType = "nylon";
+        Console.WriteLine("cloth type is :" + c.ClothType);
+    }
+}
+-----------------------------------------------------------------------------
+14).MULTILEVEL INHERITANCE
+        using System;
+        class Product
+{
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public double Cost
+    {
+        get; set;
+    }
+    class ElecronicProduct : Product
+    {
+        public string ProductType { get; set; }
+    }
+    class Mobile : ElecronicProduct
+    {                                                     //MULTILEVEL INHERITANCE
+        public string warrenty { get; set; }
+    }
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Mobile m = new Mobile();
+            m.Id = "64756gfh";
+            Console.WriteLine("product id is: " + m.Id);
+            m.Name = "mobile";
+            Console.WriteLine("product name is: " + m.Name);
+            m.ProductType = "elecronic product";
+            Console.WriteLine("product type is: " + m.ProductType);
+            m.warrenty = "18/09/2028";
+            Console.WriteLine("product warrenty is: " + m.warrenty);
+        }
+    }
+}
+------------------------------------------------------
+15).SINGLE LEVEL INHERITANCE.
+class Product //single parent
+{
+
+    string Id = "rv55";
+    string Name = "mobile";
+    double Cost = 19000;
+    public string Get()
+    {
+        Id = "rv55";
+        return Id;
+
+    }                                            
+}
+class Mobile : Product //single child
+{
+
+    string Warrenty = "10-07-2023";
+}
+class Program
+{
+    public static void Main()
+    {
+
+        Mobile m = new Mobile();
+        Console.WriteLine("id is: " + m.Get());
+        // Console.WriteLine( "warrenty is: "+ m.Warrenty);
+        //m.Id;
+        //m.Warrenty;
+    }
+}
+----------------------------------------------------------------------------
+15). INHERITANCE
+class Class1
+{
+    public Class1(int i)
+    {
+        Console.WriteLine("class1 constructor is calles first: " + i);
+    }
+    public void Test1()
+    {
+        Console.WriteLine("method1");
+    }
+
+}
+class Class2 : Class1
+{
+    public Class2(int b) : base(b)
+    {
+        Console.WriteLine("class2 constructor called next.");
+    }
+    public void Test2()
+    {
+        Console.WriteLine("method2");
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Class2 c = new Class2(50);
+        c.Test2();
+    }
+}
+----------------------------------------------------------------------------
+16).INHERITANCE
+class Product
+
+{
+    public string Id;
+    public double Price;
+    public string Name;
+
+    public void EnterName(string name)
+    {
+        Name = name;
+        string newname = Name;
+        Console.WriteLine("name is : " + newname);
+
+    }
+
+}
+class Details : Product
+{
+    string address;
+    // Id = "234rdh" You cannot assign a value (`Id = "234rdh"`) directly inside the class body like this.  
+    //- In C#, assignments must happen:
+    //  -At the point of declaration(`public string Id = "234rdh";`), OR  
+    //  - Inside a constructor, OR  
+    //  - Inside a method.
+    public void GetDetails(string address)
+    {
+
+        this.address = address;
+        EnterName("ravi");
+        Console.WriteLine("address is: " + address);
+    }
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Details d = new Details();
+        d.GetDetails("kandukuru");
+
+
+    }
+}
+-------------------------------------------------------------------
+17).INHERITANCE
+class ParentClass
+{
+    double Salory;
+    double TotalMoney;
+    public double Calculate(double amount, double totalMoney)
+    {
+        Salory = amount;
+        TotalMoney = totalMoney;
+        double TotalSalory = Salory + TotalMoney;
+        return TotalSalory;
+    }
+}
+class Child1 : ParentClass
+{
+    public void Result()
+    {
+        Console.WriteLine("the result is: " + Calculate(350, 450));
+    }
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Child1 p = new Child1();
+        // p.Calculate(5000, 7000);
+        Console.WriteLine("the totalmoney is: " + p.Calculate(5000, 7000));
+
+        p.Result();
+    }
+}
+------------------------------------------------------------------------------------
+18).INHERITANCE
+class ParentClass1
+{
+    private int A;
+    private int B;
+    public ParentClass1(int a, int b)
+    {
+        A = a;
+        B = b;
+        Console.WriteLine("parentclass1 constructor called.");
+    }
+    public int Calculate()
+    {
+        int c = A + B;
+        return c;
+    }
+}
+class ParentChild1 : ParentClass1
+
+{
+    //public ParentChild1(int a, int c) : base(a, c)
+    //{
+    //    Console.WriteLine("parentchild1 constructor called.");
+    //}
+    public void Print()
+    {
+        Console.WriteLine("result is: " + Calculate());
+    }
+}
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        ParentChild1 p = new ParentChild1(25, 30);
+        p.Print();
+
+    }
+}
+------------------------------------------------------------------------
+19). INHERITANCE
+class Parent1
+{
+    public Parent1()
+    {
+        Console.WriteLine("parent classes constructor called autometically in inheritance.");
+    }
+    public void Test1()
+    {
+        Console.WriteLine("method1");
+    }
+}
+class ParentChild1 : Parent1
+{
+    public ParentChild1()
+    {
+        Console.WriteLine("parent child classes constructor called autometically in inheritance.");
+    }
+    public void Test2()
+    {
+        Console.WriteLine("method2");
+    }
+}
+class Child : ParentChild1
+{
+    public void Test3()
+    {
+        Console.WriteLine("method3");
+    }
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Parent1 p = new Parent1();
+        Child c = new Child();
+        p = c;
+        p.Test1();
+        //p.Test2();
+        //p.Test3();
+
+    }
+}
+-------------------------------------------------------------------
+20).SINGLE LEVEL INHERITANCE USING CONSTRUCTOR?
+
+using System;
+class Program
+{                                                          //parent parameterless constructor in inheritance is implicitly called by its child class 
+                                                               constructor,whereas it is parameterised it is explicitly called by using base
+                                                               keyword.inside child class,parent constructor executed first automatically.
+       public int Id;
+       public string Name;
+       public double Cost;
+    public Program(int id, string name, double cost)
+    {
+        Id = id;
+        Name = name;
+        Cost = cost;
+        Console.WriteLine("parent class constructor execution......");
+    }
+}
+class Program1 : Program
+{
+   public float Expiry;
+    public Program1(int id, string name, double cost, float expiry) : base(id, name, cost)
+
+    {
+        Expiry = expiry;
+        Console.WriteLine("child class constructor execution........");
+    }
+}
+class Program3
+{
+    public static void Main()
+    {
+        Program1 p = new Program1(12, "ravi", 25000, 3.5f);
+
+        Console.WriteLine(p.Name);
+    }
+}
+-----------------------------------------------------------------------
+21).HIERARCHEAL INHERITANCE USING CONSTRUCTOR?
+
+using System;
+class Product
+{
+   public int Id;
+   public string Name;
+   public double Cost;
+    public Product(int id, string name, double cost)
+    {
+        Id = id;
+        Name = name;
+        Cost = cost;
+    }
+}
+class ElectronicProduct : Product
+{
+   public float Warrenty;
+    public ElectronicProduct(int id, string name, double cost,float warrenty) : base(id, name, cost)
+    {
+        Warrenty = warrenty;
+    }
+}
+class FoodProduct : Product
+{
+    public string Expiry;
+    public FoodProduct(int id, string name, double cost, string expiry) : base(id, name, cost)
+    {
+        Expiry = expiry;
+    }
+}
+class ClothingProduct : Product
+{
+    public string ClothType;
+    public ClothingProduct(int id, string name, double cost, string clothtype) : base(id, name, cost)
+    {
+        ClothType = clothtype;
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        ClothingProduct p = new ClothingProduct(101, "tshirt", 370, "cotton");
+
+        Console.WriteLine("the cloth type is: "+ p.ClothType);
+        Console.WriteLine("product name is: " + p.Name);
+        Console.WriteLine("clothingProduct cost: " + p.Cost);
+
+        FoodProduct f = new FoodProduct(102, "pizza", 250, "12-03-2025");
+        Console.WriteLine("food product id is: "+ f.Id);
+        Console.WriteLine("fodd product name: "+ f.Name);
+    }
+}
+------------------------------------------------------------------------------------------------------------
+22).SINGLE INHEITANCE PARENT & CHILD CLASS HAVING SAME METHOD?
+using System;
+class Product
+{
+   public int a = 1;
+   public int b= 2;
+    public int Result()          //When a derived class defines a method with the same name as the base class,
+                                   the derived class’s method hides the base class’s method.
+    {
+        int c = a + b;
+        return c;
+
+    }
+}
+class Child : Product
+{
+    public static int d = 1;
+     public  int e = d + 2;
+    public int Result()
+    {
+        int f = e + 3;
+        return f;
+    }
+}
+class Program
+{
+    static void Main()
+    {
+
+        Product p = new Product();
+        Console.WriteLine(p.Result());
+        //Child c = new Child();
+        //Console.WriteLine(c.Result());
+    }
+}
+---------------------------------------------------------------------------------------
+23).PARENT CLASS METHOD ASSIGNING TO THE CHILD CLASS LOCAL VARIABLE NOT TO INSTAANCE VARIABLE, USING base KEYWORD?
+
+using System;
+class Product
+{
+    public int a = 1;
+    public int b = 2;
+    public int Result()
+    {
+        int c = a + b;
+        return c;
+
+    }
+}
+class Child: Product
+{
+    public int Check()
+    {
+        int d = base.Result();
+        return d;
+    }
+        static void Main()
+        {
+        Child c = new Child();
+        Console.WriteLine(c.Check());
+    }
+}
+--------------------------------------------------------------------------------------------
+24).INHERITANCE WITH CONSTRUCTOR?
+using System;
+
+class Parent1
+{                                          //parent parameterless constructor in inheritance is implicitly called by its child class 
+                                            constructor,whereas it is parameterised it is explicitly called by using base
+                                            keyword.inside child class,parent constructor executed first automatically.
+
+   public int a;
+   public int b;                               
+    public Parent1(int i, int a, int b)
+    {
+        this.a = a;
+        this.b = b;
+        Console.WriteLine(a);
+    }
+}
+class Child : Parent1
+{
+   public int d;
+    public Child(int d) : base(110,11,12)
+    {
+        this.d = d;
+        Console.WriteLine("i am ok");
+    }
+    public static void Main()
+    {
+        Child c = new Child(33);
+        Console.WriteLine(c.d);
+        
+    }
+}

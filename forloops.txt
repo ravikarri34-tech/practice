@@ -1,0 +1,339 @@
+1).FORLOOP TO PRINT A MULTIPLICATION TABLE?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        int t = 0;
+        Console.WriteLine("enter number");
+        int n = int.Parse(Console.ReadLine());
+        for (int i = 1; i <= 10; i++)
+        {
+            t = n * i;
+            Console.WriteLine($"{n}*{i}"+"="+ t);
+        }
+    }
+}
+---------------------------------------------------
+2).FORLOOP TO FIND EVEN & ODD NUMBERS BETWEEN 1-10?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("even numbers");
+        for (int i = 1; i <= 10; i++)
+        {
+            if (i % 2 == 0) {
+                Console.WriteLine(i);
+            }
+       }
+       Console.WriteLine("odd numbers");
+       for (int i = 1; i <= 10; i++)
+        {
+            if (i % 2 != 0) {
+                Console.WriteLine(i);
+            }
+            
+       }
+    }
+}
+----------------------------------------------------------------
+3).FORLOOP TO FIND EVEN & ODD NUMBERS BETWEEN RUNTIME?
+
+class Program
+{
+    static void Main()
+    {
+
+        Console.WriteLine("enter a number:")
+            int num = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("enter a number:")
+            int num1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("even numbers")
+        for (int i = num; i <= num1; i++)
+        {
+            if (i % 2 == 0)
+            {
+                Console.WriteLine(i)
+            }
+
+        }
+        Console.WriteLine("odd numbers")
+        for (int i = num; i <= num1; i++)
+        {
+            if (i % 2 != 0)
+            {
+                Console.WriteLine(i)
+            }
+
+        }
+---------------------------------------------------------
+4).FORLOOP TO PRINT ASCENDING & DESCENDING ORDER AT RUN TIME?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("enter a number");
+            int n = int.Parse(Console.ReadLine());
+        Console.WriteLine("enter a number");
+            int t = int.Parse(Console.ReadLine());
+        //for(int i = n; i <= t; i++)
+        for(int i = n; i >= t; i--)
+        {
+            Console.WriteLine(i);
+        }
+
+    }
+}
+--------------------------------------------------------------
+5).FORLOOP FIND THE GIVEN NUMBER IS EVEN OR ODD?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("enter a number");
+            int n = int.Parse(Console.ReadLine());
+        for(int i = 0; i < 1; i++)
+        {
+            if (n % 2 == 0)
+            {
+                Console.WriteLine("even number");
+                Console.WriteLine(n);
+            }
+            else
+            {
+                Console.WriteLine("odd number");
+                Console.WriteLine(n);
+            }
+        }
+    }
+}
+-------------------------------------------------------------------
+6).FORLOOP TO FIND THE FACTORS OF THE GIVEN NUMBER?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        
+        Console.WriteLine("enter a number");
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("factors of the given number");
+        for(int i = 1; i <= n; i++)
+        {
+            if(n%i==0)
+            {
+
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------
+7).FORLOOP TO PRINT TABLES HOW MANY YOU WANT?
+
+using System;
+class Porgram
+{
+    static void Main()
+    {
+        Console.WriteLine("enter a number:");
+        int n = int .Parse(Console.ReadLine());
+
+        Console.WriteLine("enter a number:");
+        int t = int.Parse(Console.ReadLine());
+        for(int i = n; i <= t; i++)
+        {
+            for(int j = 1; j <=10; j++)
+            {
+                Console.WriteLine(i+ "*" +j+"="+ i*j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+-----------------------------------------------------------------------
+8).FOLOOP TO FIND THE SUM OF THE GIVEN NUMBER?
+
+using System;
+class Porgram
+{
+    static void Main()
+    {
+        int sum = 0;
+        Console.WriteLine("enter a number:");
+        int num = int.Parse(Console.ReadLine());
+
+        for (; num>0; num /= 10)
+        {
+            int digit = num % 10;
+            sum = sum + digit;
+            
+        }
+        Console.WriteLine(sum);
+    }
+}
+---------------------------------------------------------------------
+9).FORLOOP TO FIND THE REVERS OF A NUMBER?
+
+using System;
+class Program
+{
+
+    static void Main()
+    {
+
+        Console.WriteLine("enter a number:");
+        int num = int.Parse(Console.ReadLine());
+        int rev = 0;
+        for (; num > 0; num /= 10)
+        {
+            int digit = num % 10;
+            rev = rev * 10 + digit;
+        }
+        Console.WriteLine(rev);
+    }
+}
+--------------------------------------------------------
+10).FORLOOP TO FIND THE FACTORIAL OF THE GIVEN NUMBER?
+
+using System;
+class Program
+{
+
+    static void Main()
+    {
+        int fact = 1;
+        Console.WriteLine("enter a number");
+        int num = int.Parse(Console.ReadLine());
+        for (; num > 0; num--)
+        {
+            fact = fact * num;
+        }
+        Console.WriteLine(fact);
+    }
+}
+
+-------------------------------------------------------------
+11).FORLOOP TO CHECK WEATHER GIVEN NUMBER IS PRIME NUMBER OR NOT?
+using System;
+class Program
+{
+
+    static void Main()
+    {
+        int count = 0;
+        Console.WriteLine("enter a number");
+        int num = int.Parse(Console.ReadLine());
+        for (int i = 1;i<=num;i++)
+        {
+           if(num%i==0){
+               count+=1;
+           }
+        }
+        Console.WriteLine("count is "+ count);
+        if(count==2){
+            Console.WriteLine("prime number");
+        }
+        else{
+            Console.WriteLine("not prime number");
+        }
+        
+    }
+}
+-----------------------------------------------------------------
+12).FORLOOP TO PRINT THE MIN & MAX VALUE OF THE GIVEN NUMBERS AT RUNTIME?
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter how many numbers: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int min =int.MaxValue;   // start with largest possible value
+        int max =int.MinValue;   // start with smallest possible value
+
+        Console.WriteLine("Enter the numbers:");
+        for (int i = 0; i < n; i++)
+        {
+            int num = int.Parse(Console.ReadLine());
+             
+            if (num < min)
+            {
+                min = num;   // update min
+            }
+            if (num > max)
+            {
+                max = num;   // update max
+            }
+        }
+
+        Console.WriteLine("Minimum number = " + min);
+        Console.WriteLine("Maximum number = " + max);
+    }
+}
+---------------------------------------------------------------
+13).FORLOOP TO FIND RIVERS OF A STRING?
+
+using System;
+class Program
+{
+
+    static void Main()
+    {
+        Console.WriteLine("enter the name: ");
+        string name = Console.ReadLine();
+        string riv = "";
+        for (int i = name.Length - 1; i >= 0; i--)
+        {
+            riv = riv + name[i];
+        }
+        Console.WriteLine(riv);
+    }
+}
+-----------------------------------------------------------------
+14).FORLOOP TO PRINT THE SUM OF 1-10 NUMBERS;
+
+using System;
+class Program
+{
+
+    static void Main()
+    {
+        int n = 0;
+        for (int i = 1; i >= 10; i++)
+        {
+            n = n + i;
+        }
+        Console.WriteLine(n);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,372 @@
+
+1).ARRAYS
+
+using System;
+class Program
+{
+   static void Main()
+   {
+       int sum = 0;               
+       int[] check = new int[5];
+       check[0] = 10;
+        check[1] = 20;
+        check[2] = 30;
+        check[3] = 40;
+       check[4] = 50;
+        //Console.WriteLine(check[0]);
+       //Console.WriteLine(check[1]);
+        //Console.WriteLine(check[2]);
+       //Console.WriteLine(check[3]);
+      //Console.WriteLine(check[4]);
+        for (int i = 0; i <= 4; i++)
+        {
+            sum = sum + check[i];
+            Console.WriteLine(sum);
+       }
+    }
+}
+
+--------------------------------------------------------
+2).ARRAYS TO PRINT SUM OF EVEN NUMBERS AND ODNUMBERS BETWEEN 1 - 10?
+
+using System;
+class Program
+{
+    int n = 0;
+    static void Main()
+    {
+        Program obj = new Program();
+  
+        int m = 0;
+        int[] sum = new int[10];                                         
+        sum[0] = 1;
+        sum[1] = 2;
+        sum[2] = 3;
+        sum[3] = 4;
+        sum[4] = 5;
+        sum[5] = 6;
+        sum[6] = 7;
+        sum[7] = 8;
+        sum[8] = 9;
+        sum[9] = 10;
+        for (int i = 0; i <= 9; i++)
+        {
+            if (sum[i] % 2 == 0)
+            {
+                obj.n = obj.n + sum[i];
+            }
+            else
+            {
+                m = m + sum[i];
+            }
+        }
+        Console.WriteLine("sum of even numbers: " + obj.n);
+        Console.WriteLine("sum of odd numbers: " + m);
+    }
+}
+
+------------------------------------------------------------------------
+3).ARRYS TO PRINT RUNTIME EVEN & ODD NUMBERS SUM?
+
+using System;
+class Program
+{
+    static void Main()                     
+    {
+        int evennum = 0;
+        int oddnum = 0;
+        int[] sum = new int[4];
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write("enter number: ");
+            sum[i] = int.Parse(Console.ReadLine());
+            if (sum[i] % 2 == 0)
+            {
+                evennum = evennum + sum[i];
+            }
+            else
+            {
+                oddnum = oddnum + sum[i];
+            }
+
+        }
+        Console.WriteLine("even sum: " + evennum);
+        Console.WriteLine("odd sum: " + oddnum);
+
+    }
+}
+
+--------------------------------------------------------------
+4).ARRYS TO PRINT NUMBER OF EVEN & ODD NUMBERS AT RUNTIME GIVEN?
+
+//using System;
+//class Program
+//{
+//    static void Main()
+//    {
+//        int evennums = 0;                       
+//        int oddnums = 0;
+//        int[] count = new int[5];
+//        for (int i = 0; i < 5; i++)
+//        {
+//            Console.WriteLine("Enter number");
+//            count[i] = int.Parse(Console.ReadLine());
+//            if (count[i] % 2 == 0)
+//            {
+//                evennums = evennums + 1;
+//            }
+//            else
+//            {
+//                oddnums = oddnums + 1;
+//            }
+//        }
+//        Console.WriteLine("total even numbers: "+ evennums);
+//        Console.WriteLine("total odd numbers: " + oddnums);
+//    }
+//}
+
+-------------------------------------------------------------------
+5).ARRAYS TO PRINT MAX & MIN VALUE OF THE GIVEN NUMBERS(RUN TIME)?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        int min = 0; int max = 0;                                 
+        Console.WriteLine("enter the size of an array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] ar = new int[size];
+        for (int i = 0; i < size; i++)
+        {
+            Console.WriteLine("enter numbers: ");
+
+            ar[i] = int.Parse(Console.ReadLine());
+        }
+        min = ar[0];
+        max = ar[0];
+        for (int i = 0; i < size; i++)
+        {
+            if (min > ar[i])
+            {
+                min = ar[i];
+            }
+            if (max < ar[i])
+            {
+                max = ar[i];
+            }
+        }
+        Console.WriteLine("minmum value is: " + min);
+        Console.WriteLine("maxmum value is: " + max);
+    }
+}
+---------------------------------------------------------------------
+6).ARRAYS TO PRINT MAX & MIN VALUE OF THE GIVEN NUMBERS(COMPILE TIME)?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 124, 34, 94, 74, 25, 54 };
+
+        int min = numbers[0];
+        int max = numbers[0];                                            
+        for (int i = 0; i < 6; i++) // numbers.length;
+        {
+            if (numbers[i] < min)
+            {
+                min = numbers[i];
+            }
+            if (numbers[i] > max)
+            {
+                max = numbers[i];
+            }
+        }
+        Console.WriteLine("minimum value = " + min);
+        Console.WriteLine("maximum value = " + max);
+
+
+    }
+}
+------------------------------------------------------------------
+7).ARRAYS TO PRINT RUNTIME TABLE?
+
+using System;
+class Program
+{
+    static void Main()                                 
+    {
+        Console.WriteLine("enter number: ");
+        int n = int.Parse(Console.ReadLine());
+        //int s = 0;
+        int[] values = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < values.Length; i++)
+        {
+            // s = n * values[i];
+            //Console.WriteLine(n * values[i]);
+            Console.WriteLine(n + "*" + values[i] + "=" + n * values[i]);
+        }
+    }
+}
+
+---------------------------------------------------------------------
+8).ARRAYS TO PRINT SUM OF TOTAL NUMBERS?
+
+using System;
+class Program
+{
+    static void Main()                    
+    {
+        int n = 0;
+
+        Console.WriteLine("fix the length of an array: ");
+        int size = int.Parse(Console.ReadLine());
+
+        int[] sum = new int[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            Console.WriteLine("enter value: ");
+            sum[i] = int.Parse(Console.ReadLine());
+
+            n = n + sum[i];
+        }
+        Console.WriteLine("sum of the numbers is: " + n);
+    }
+}
+
+-------------------------------------------------------------------------
+9).ARRAYS TO STORE STRING ELEMENTS?
+using System;
+class Program
+{
+    static void Main()
+    {                                            
+        string s = "0";
+        string[] store = new string[5];
+        Console.WriteLine("enter names: ");
+        for (int i = 0; i < store.Length; i++)
+        {
+            store[i] = Console.ReadLine();
+            s = store[i];
+        }
+
+        for (int i = 0; i < store.Length; i++)
+        {
+            Console.WriteLine(store[i]);
+        }
+        // Console.WriteLine(store[i]);
+    }
+}
+
+--------------------------------------------------------------------------------
+10).ARRAYS TO PRINT REVERS OF THE STRING?
+
+using System;
+class Program
+{                                         
+    static void Main()
+    {
+        Console.WriteLine("enter a string: ");
+        string s = Console.ReadLine();
+        string r = "";
+        for (int i = s.Length - 1; i >= 0; i--)
+        {
+            r += s[i];
+        }
+        Console.WriteLine("Riversed string: " + r);
+    }
+}
+-------------------------------------------------------------------------------
+11).ARRAYS TO PRINT 1- 10 NUMBERS ASCENDING ORDER?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        int n = 0;
+        int[] num = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for(int i = 0; i <= num.Length - 1; i++)
+        {
+            n = num[i];
+            Console.WriteLine(n);
+        }
+    }
+}
+---------------------------------------------------------------------------
+12).ARRAYS TO PRINT NUMBERS IN ASCENDING & DESCENDING ORDER AT RUN TIME?
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("enter the size of an array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] ar = new int[size];
+        for (int i = 0; i < ar.Length; i++)
+        {
+            Console.WriteLine("enter value: ");
+            ar[i] = int.Parse(Console.ReadLine());
+        }
+        Array.Sort(ar);
+        Console.WriteLine("numbers in ascending order.");
+       // for (int i = 0; i < ar.Length; i++)
+       for(int i=ar.Length-1;i>=0;i--)
+        {
+            Console.WriteLine(ar[i]);
+        }
+    }
+}
+---------------------------------------------------------------------
+
+13).ARRAYS TO PRINT MULTIPLICATION TABLE;
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int n = int.Parse(Console.ReadLine());
+
+        // Create an array to store numbers from 1 to n
+        int[] table = new int[10];
+
+        for (int i = 0; i <= table.Length - 1; i++)
+        {
+            table[i] = n * (i + 1);
+            Console.WriteLine(table[i]);
+        }
+        // for (int i = 0; i <= table.Length - 1; i++)
+        // {
+        //     Console.WriteLine(table[i]);
+        // }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
