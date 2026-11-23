@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Employee_BLL/Employee_BLL.csproj" />
+  <Project Path="Employee_DAL/Employee_DAL.csproj" />
+  <Project Path="Employee_Entities/Employee_Entities.csproj" />
+  <Project Path="Employee_Web/Employee_Web.csproj" />
+</Solution>
